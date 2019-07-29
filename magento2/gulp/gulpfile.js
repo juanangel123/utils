@@ -177,7 +177,7 @@ gulp.task('exec', function (cb) {
 // Static content deploy task
 gulp.task('deploy', function (cb) {
     if (themeName) {
-        exec('php bin/magento setup:static-content:deploy ' + themesConfig[themeName].locale + '', function (err, stdout, stderr) {
+        exec('php bin/magento setup:static-content:deploy ' + themesConfig[themeName].locale + ' --force', function (err, stdout, stderr) {
             console.log(stdout);
             console.log(stderr);
             cb(err);
