@@ -113,3 +113,11 @@ alias gps="git push"
 alias gpsf="git push --force"
 alias gpl="git pull --rebase --autostash"
 alias gb="git branch"
+alias dl="docker_list"
+
+function docker_list {
+  containers=$(docker ps | awk '{if (NR!=1) print $1 ": " $(NF)}')
+  
+  echo "Containers:"
+  echo $containers
+}
